@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "990422585560",
+    "firebase_url": "https://restaurante-263d5.firebaseio.com",
+    "project_id": "restaurante-263d5",
+    "storage_bucket": "restaurante-263d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990422585560:android:48b6051042bf19f1",
+        "android_client_info": {
+          "package_name": "com.example.frank.proyectores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990422585560-7ocas9j5gq8mih7o4g7jncic1j8qrebq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frank.proyectores",
+            "certificate_hash": "94f823e9cb6258133e4aa1538ff59ae0849010e6"
+          }
+        },
+        {
+          "client_id": "990422585560-64t5ficuteg0bqcufaa73im3k89t7h86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGvU4BYY0rVaRU7El5Kf7Ge50W-jbmGxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990422585560-64t5ficuteg0bqcufaa73im3k89t7h86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
