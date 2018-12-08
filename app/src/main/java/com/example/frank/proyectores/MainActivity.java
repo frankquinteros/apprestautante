@@ -72,7 +72,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             nameTextView.setText(account.getDisplayName());
             emailTextView.setText(account.getEmail());
             idTextView.setText(account.getId());
-            Log.d("RESTAURANTES", account.getPhotoUrl().toString());
+            String photourl;
+            if (account.getPhotoUrl() == null) {
+                photourl = "no hay foto";
+            } else {
+                photourl = account.getPhotoUrl().toString();
+            }
+            //Log.d("RESTAURANTES", account.getPhotoUrl().toString());
         }else {
             goLogInScreen();
         }
