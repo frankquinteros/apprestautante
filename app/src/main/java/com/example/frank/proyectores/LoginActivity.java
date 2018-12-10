@@ -20,6 +20,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private SignInButton signInButton;
     private Button menu;
     private Button registro_client;
+    private Button registro_rest;
+    private Button pedidos_rest;
     public static final int SING_IN_CODE = 777;
 
     @Override
@@ -59,7 +61,23 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         });
 
+        registro_rest = (Button) findViewById(R.id.registro_rest);
+        registro_rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RestauranteActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        pedidos_rest =(Button) findViewById(R.id.pedidos_rest);
+        pedidos_rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,PedidosActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
