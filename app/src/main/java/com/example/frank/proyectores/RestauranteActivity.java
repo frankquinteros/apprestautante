@@ -1,9 +1,13 @@
 package com.example.frank.proyectores;
 
+<<<<<<< HEAD
 import android.content.DialogInterface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
+=======
+import android.content.Intent;
+>>>>>>> a4c1cbcbe3edc866da94664d1bbbd14bd88380c2
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -148,4 +152,5 @@ public class RestauranteActivity extends AppCompatActivity implements OnMapReady
 
         return result;
     }
+
 }
