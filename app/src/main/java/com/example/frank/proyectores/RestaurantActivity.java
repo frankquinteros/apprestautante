@@ -1,13 +1,11 @@
 package com.example.frank.proyectores;
 
-<<<<<<< HEAD
+
 import android.content.DialogInterface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AlertDialog;
-=======
-import android.content.Intent;
->>>>>>> a4c1cbcbe3edc866da94664d1bbbd14bd88380c2
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +34,7 @@ import java.util.Locale;
 
 import cz.msebera.android.httpclient.Header;
 
-public class RestauranteActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class RestaurantActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView map;
     private GoogleMap mMap;
     private Geocoder geocoder;
@@ -87,7 +85,7 @@ public class RestauranteActivity extends AppCompatActivity implements OnMapReady
         client.post(Data.REGISTER_RESTORANT, params, new JsonHttpResponseHandler(){
         //client.post(Data.REGISTER_RESTORANTE, params,(JsonHttpResponseHandler)onSucess(status){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
-                AlertDialog alertDialog = new AlertDialog.Builder(RestauranteActivity.this).create();
+                AlertDialog alertDialog = new AlertDialog.Builder(RestaurantActivity.this).create();
                 try {
                     String msn = response.getString("msn");
                     alertDialog.setTitle("RESPONSE SERVER");

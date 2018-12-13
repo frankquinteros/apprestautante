@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
         signInButton =(SignInButton) findViewById(R.id.signInButton);
+        signInButton.setColorScheme(SignInButton.COLOR_DARK);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         registro_rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,RestauranteActivity.class);
+                Intent intent = new Intent(LoginActivity.this,RestaurantActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void handleSingInResult(GoogleSignInResult result) {
-        if (result.isSuccess()){
+      if (result.isSuccess()){
             goMainScreen();
 
         }else {
