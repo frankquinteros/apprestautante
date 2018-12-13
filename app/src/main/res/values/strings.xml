@@ -4,4 +4,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="not_close_session">no se pudo cerrar</string>
     <string name="not_revoke">no sepudo revocar el acceso</string>
+    <string name="title_activity_log">logActivity</string>
+    <string name="title_activity_log_">log_Activity</string>
+    <string name="title_activity_lon">LonActivity</string>
 </resources>
