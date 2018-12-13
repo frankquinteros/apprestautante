@@ -75,13 +75,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             nameTextView.setText(account.getDisplayName());
             emailTextView.setText(account.getEmail());
             idTextView.setText(account.getId());
-            Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
+
             String photourl;
             if (account.getPhotoUrl() == null) {
                 photourl = "no hay foto";
             } else {
                 photourl = account.getPhotoUrl().toString();
             }
+            Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
             //Log.d("RESTAURANTES", account.getPhotoUrl().toString());
         }else {
             goLogInScreen();
@@ -97,30 +98,30 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     public void logOut(View view){
-       /*Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+       Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
             @Override
             public void onResult(@NonNull Status status) {
                 if (status.isSuccess()) {
                     goLogInScreen();
                 } else {
-                    Toast.makeText(getApplicationContext(), R.string.not_log_in, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.not_close_session, Toast.LENGTH_SHORT).show();
                 }
             }
-        });*/
+        });
 
     }
 
     public void revoke (View viiew){
-       /*Auth.GoogleSignInApi.revokeAccess(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+       Auth.GoogleSignInApi.revokeAccess(googleApiClient).setResultCallback(new ResultCallback<Status>() {
             @Override
             public void onResult(@NonNull Status status) {
                 if (status.isSuccess()) {
                     goLogInScreen();
                 } else {
-                    Toast.makeText(getApplicationContext(), R.string.not_log_in, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.not_revoke, Toast.LENGTH_SHORT).show();
                 }
             }
-        });*/
+        });
     }
 
     @Override
