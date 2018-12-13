@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -17,6 +19,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private ImageView photoImageView;
@@ -72,12 +75,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             nameTextView.setText(account.getDisplayName());
             emailTextView.setText(account.getEmail());
             idTextView.setText(account.getId());
+
             String photourl;
             if (account.getPhotoUrl() == null) {
                 photourl = "no hay foto";
             } else {
                 photourl = account.getPhotoUrl().toString();
             }
+            Glide.with(this).load(account.getPhotoUrl()).into(photoImageView);
             //Log.d("RESTAURANTES", account.getPhotoUrl().toString());
         }else {
             goLogInScreen();
@@ -93,11 +98,30 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     public void logOut(View view){
+       Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+                if (status.isSuccess()) {
+                    goLogInScreen();
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.not_close_session, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
     public void revoke (View viiew){
-
+       Auth.GoogleSignInApi.revokeAccess(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+                if (status.isSuccess()) {
+                    goLogInScreen();
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.not_revoke, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

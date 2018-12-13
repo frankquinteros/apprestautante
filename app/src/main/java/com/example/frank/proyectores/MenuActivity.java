@@ -18,9 +18,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.example.frank.proyectores.adaptors.MenusAdapter;
 import com.example.frank.proyectores.items.MenuResItem;
 import com.example.frank.proyectores.util.Data;
+=======
+import com.example.frank.proyectores.utils.Data;
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -29,9 +33,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Objects;
 
+=======
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
 import cz.msebera.android.httpclient.Header;
 
 public class MenuActivity extends AppCompatActivity {
@@ -57,9 +64,12 @@ public class MenuActivity extends AppCompatActivity {
         editProperty = findViewById(R.id.property);
         editDescription = findViewById(R.id.description);
         recyclerMenu = findViewById(R.id.recyclerMenu);
+<<<<<<< HEAD
 
         listData = new ArrayList<>();
 
+=======
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
         if (reviewPermissions()){
             btnphoto.setVisibility(View.VISIBLE);
         }
@@ -72,6 +82,7 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
 
         if (reviewPermissions()){
             btnguardar.setVisibility(View.VISIBLE);
@@ -82,6 +93,17 @@ public class MenuActivity extends AppCompatActivity {
                sendData();
              }
          });
+=======
+        if (reviewPermissions()){
+            btnguardar.setVisibility(View.VISIBLE);
+        }
+        btnguardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData();
+            }
+        });
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
 
 
         getData();
@@ -121,7 +143,10 @@ public class MenuActivity extends AppCompatActivity {
 
 
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
     public void getData() {
         //cargar datos de la bd
         listData.clear();
@@ -151,13 +176,17 @@ public class MenuActivity extends AppCompatActivity {
                     }
 
                     loadData();
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
             }
         });
+<<<<<<< HEAD
 
     }
     private void loadData() {
@@ -220,3 +249,64 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 }
+=======
+        private void loadData() {
+
+            recyclerMenu.setLayoutManager(
+                    new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true));
+            MenusAdapter adapter = new MenusAdapter(this, listData);
+            recyclerMenu.setAdapter(adapter);
+
+        }
+        private void sendData() {
+
+            if (editPrice.getText().toString().equals("") || editName.getText().toString().equals("")){
+                Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            AsyncHttpClient client = new AsyncHttpClient();
+            RequestParams params = new RequestParams();
+
+            //params.put("restaurant","5bf705dc9825331b589ab82a");//idRestaurant
+            params.put("name", editName.getText());
+            params.put("price", editPrice.getText());
+            params.put("property", editProperty.getText());
+            params.put("description", editDescription.getText());
+            client.addHeader("authorization",Data.TOKEN);
+
+            client.post(Data.URL_MENUS,params,new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    try {
+                        //String message = response.getString("message");
+                        String id = response.getString("_id");
+
+                        if (id != null) {
+                            Toast.makeText(MenuActivity.this, id, Toast.LENGTH_SHORT).show();
+
+                            editName.getText().clear();
+                            editPrice.getText().clear();
+                            //getData();
+                            //otra activy...... do stuff
+                            //finish();
+                            getData();
+                        } else {
+                            Toast.makeText(MenuActivity.this, "ERROR", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                @Override
+                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                    Toast.makeText(MenuActivity.this, responseString, Toast.LENGTH_LONG).show();
+                    Log.d("message",responseString);
+                }
+
+            });
+
+
+
+        }
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f

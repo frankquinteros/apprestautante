@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestauranteActivity">
+    tools:context=".RestaurantActivity">
 
     <TextView
         android:id="@+id/registrorest"
@@ -23,13 +23,13 @@
         android:id="@+id/name"
         android:layout_width="156dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="NAME"
-        android:textSize="13dp"
+        android:hint="nombre"
         android:inputType="textPersonName"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,13 +39,13 @@
         android:id="@+id/nit"
         android:layout_width="156dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="NIT"
-        android:textSize="13dp"
+        android:hint="nit"
         android:inputType="number"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,52 +55,40 @@
         android:id="@+id/proterty"
         android:layout_width="156dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="PROPERTY"
-        android:textSize="13dp"
+        android:hint="propietario"
         android:inputType="textPersonName"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nit" />
 
     <EditText
-        android:id="@+id/street"
+        android:id="@+id/phone"
         android:layout_width="156dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="STREET"
-        android:textSize="13dp"
+        android:hint="telefono"
         android:inputType="textPersonName"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/proterty" />
 
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="156dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="PHONE"
-        android:textSize="13dp"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/street" />
-
     <ImageView
+<<<<<<< HEAD
         android:id="@+id/foto"
+=======
+        android:id="@+id/image"
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
         android:layout_width="132dp"
         android:layout_height="147dp"
         android:layout_marginEnd="8dp"
@@ -113,28 +101,81 @@
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <ImageButton
+<<<<<<< HEAD
         android:id="@+id/sacar_foto"
+=======
+        android:id="@+id/camera"
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toEndOf="@+id/phone"
         app:layout_constraintTop_toBottomOf="@+id/foto"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/image"
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <ImageButton
         android:id="@+id/guardar"
         android:layout_width="58dp"
         android:layout_height="36dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
+<<<<<<< HEAD
         app:layout_constraintEnd_toStartOf="@+id/sacar_foto"
         app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toEndOf="@+id/phone"
         app:layout_constraintTop_toBottomOf="@+id/foto"
+=======
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/camera"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
         app:srcCompat="@android:drawable/checkbox_on_background" />
+
+    <EditText
+        android:id="@+id/street"
+        android:layout_width="156dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="calle"
+        android:inputType="textPersonName"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/street" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="SIGUENTE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+
 </android.support.constraint.ConstraintLayout>

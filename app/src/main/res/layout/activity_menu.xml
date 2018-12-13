@@ -101,7 +101,13 @@
         android:text="photo"
         app:layout_constraintBaseline_toBaselineOf="@+id/guardar"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toEndOf="@+id/guardar" />
+=======
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guardar" />
+>>>>>>> dc520f36aeaf976b56746293ef25b7901139405f
 
     <Button
         android:id="@+id/guardar"
